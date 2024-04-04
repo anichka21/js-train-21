@@ -436,6 +436,10 @@ class LeadSinger extends Vocalist {
  * | name        | "John"           |
  * | instrument  | "Guitarist"      |
  */
+class Musician {
+  name = "john";
+  instrument = "Guitarist";
+}
 
 /*
  * Створення guitarist екземпляра класу Guitarist
@@ -446,6 +450,11 @@ class LeadSinger extends Vocalist {
  * | instrument  | "гітара"          |
  * | band        | "Led Zeppelin"    |
  */
+class Guitarist {
+    name = "Jimmy Page";      
+    instrument = "гітара";        
+    band = "Led Zeppelin";
+}
 
 /*
  * Створення bassist екземпляра класу Bassist
@@ -456,6 +465,11 @@ class LeadSinger extends Vocalist {
  * | instrument  | "бас-гітара"     |
  * | band        | "The Beatles"    |
  */
+class Bassist {
+  name = "Paul McCartney";      
+  instrument = "бас-гітара";        
+  band = "The Beatles";
+}
 
 // Створення band екземпляру класу Band
 /*
@@ -468,6 +482,14 @@ class LeadSinger extends Vocalist {
  */
 
 // Додаємо guitarist до band за допомогою addMember
+class Band {
+  name = "The Beatles";      
+  instrument = "бас-гітара";        
+  band = [bassist];
+  addMember(member) {
+    this.members.push(member);
+  }
+}
 
 /*
  * Створення vocalist екземпляра класу Vocalist
@@ -477,6 +499,10 @@ class LeadSinger extends Vocalist {
  * | name        | "Freddie Mercury" |
  * | band        | "Queen"           |
  */
+class Vocalist {
+  name = "Freddie Mercury";
+  band = "Queen";
+}
 
 /*
  * Створення songwriter екземпляра класу SongWriter
@@ -485,6 +511,9 @@ class LeadSinger extends Vocalist {
  * |-------------|------------------|
  * | songs       | ["Yesterday","Hey Jude","Let It Be",]|
  */
+class SongWriter {
+  songs = ["Yesterday","Hey Jude","Let It Be",];
+}
 
 // Створення performance екземпляра класу Performance
 /*
@@ -497,6 +526,12 @@ class LeadSinger extends Vocalist {
  */
 
 // використання Object.assign() для успадкування властивостей songwriter для LeadSinger.prototype
+class Performance {
+    band = band;                                
+    location = "Liverpool";                      
+    date = new Date('2023-08-01');
+}
+LeadSinger.prototype = Object.create(Singer.prototype);
 
 /*
  * Створення concert екземпляра класу Concert
@@ -508,6 +543,12 @@ class LeadSinger extends Vocalist {
  * | date        | new Date("1994-07-06") |
  * | ticketPrice | 100              |
  */
+class Performance {
+  band = band;                                
+  location = "BBC studios";                      
+  date = new Date("1994-07-06");
+  ticketPrice = 100;
+}
 
 /*
  * Створення leadsinger екземпляра класу LeadSinger
@@ -518,6 +559,11 @@ class LeadSinger extends Vocalist {
  * | band        | "The Rolling Stones" |
  * | songs       | ["Yesterday","Hey Jude","Let It Be",]|
  */
+class Performance {                               
+  name = "Mick Jagger";    
+  band = "The Rolling Stones";                   
+  songs = ["Yesterday","Hey Jude","Let It Be",];
+}
 
 // Методи для тестування розкоментувати після виконня всіх завдань
  musician.play();
