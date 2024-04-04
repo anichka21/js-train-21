@@ -436,10 +436,7 @@ class LeadSinger extends Vocalist {
  * | name        | "John"           |
  * | instrument  | "Guitarist"      |
  */
-class Musician {
-  name = "john";
-  instrument = "Guitarist";
-}
+let musician = new Musician("john", "Guitarist");
 
 /*
  * Створення guitarist екземпляра класу Guitarist
@@ -450,11 +447,7 @@ class Musician {
  * | instrument  | "гітара"          |
  * | band        | "Led Zeppelin"    |
  */
-class Guitarist {
-    name = "Jimmy Page";      
-    instrument = "гітара";        
-    band = "Led Zeppelin";
-}
+let guitarist = new Guitarist("Jimmy Page", "гітара", "Led Zeppelin");
 
 /*
  * Створення bassist екземпляра класу Bassist
@@ -465,11 +458,7 @@ class Guitarist {
  * | instrument  | "бас-гітара"     |
  * | band        | "The Beatles"    |
  */
-class Bassist {
-  name = "Paul McCartney";      
-  instrument = "бас-гітара";        
-  band = "The Beatles";
-}
+let bassist = new Bassist("Paul McCartney", "бас-гітара", "The Beatles")
 
 // Створення band екземпляру класу Band
 /*
@@ -482,14 +471,7 @@ class Bassist {
  */
 
 // Додаємо guitarist до band за допомогою addMember
-class Band {
-  name = "The Beatles";      
-  instrument = "бас-гітара";        
-  band = [bassist];
-  addMember(member) {
-    this.members.push(member);
-  }
-}
+let band = new Band("The Beatles", [bassist]);
 
 /*
  * Створення vocalist екземпляра класу Vocalist
@@ -499,10 +481,7 @@ class Band {
  * | name        | "Freddie Mercury" |
  * | band        | "Queen"           |
  */
-class Vocalist {
-  name = "Freddie Mercury";
-  band = "Queen";
-}
+let vocalist = new Vocalist("Freddie Mercury", "Queen")
 
 /*
  * Створення songwriter екземпляра класу SongWriter
@@ -511,9 +490,7 @@ class Vocalist {
  * |-------------|------------------|
  * | songs       | ["Yesterday","Hey Jude","Let It Be",]|
  */
-class SongWriter {
-  songs = ["Yesterday","Hey Jude","Let It Be",];
-}
+let SongWriter = new SongWriter(["Yesterday","Hey Jude","Let It Be",]);
 
 // Створення performance екземпляра класу Performance
 /*
@@ -526,11 +503,7 @@ class SongWriter {
  */
 
 // використання Object.assign() для успадкування властивостей songwriter для LeadSinger.prototype
-class Performance {
-    band = band;                                
-    location = "Liverpool";                      
-    date = new Date('2023-08-01');
-}
+let performance = new Performance(band, "Liverpool", new Date('2023-08-01'))
 LeadSinger.prototype = Object.create(Singer.prototype);
 
 /*
@@ -543,12 +516,7 @@ LeadSinger.prototype = Object.create(Singer.prototype);
  * | date        | new Date("1994-07-06") |
  * | ticketPrice | 100              |
  */
-class Performance {
-  band = band;                                
-  location = "BBC studios";                      
-  date = new Date("1994-07-06");
-  ticketPrice = 100;
-}
+let concert = new Concert(band, "BBC studios", new Date("1994-07-06") ,100)
 
 /*
  * Створення leadsinger екземпляра класу LeadSinger
@@ -559,11 +527,7 @@ class Performance {
  * | band        | "The Rolling Stones" |
  * | songs       | ["Yesterday","Hey Jude","Let It Be",]|
  */
-class Performance {                               
-  name = "Mick Jagger";    
-  band = "The Rolling Stones";                   
-  songs = ["Yesterday","Hey Jude","Let It Be",];
-}
+let leadsinger = new LeadSinger("Mick Jagger", "The Rolling Stones", ["Yesterday","Hey Jude","Let It Be",])
 
 // Методи для тестування розкоментувати після виконня всіх завдань
  musician.play();
